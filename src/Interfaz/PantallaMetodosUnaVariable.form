@@ -1,0 +1,389 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="rgUnaVariable">
+    </Component>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ayuda"/>
+          </Properties>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="381" max="-2" attributes="0"/>
+                      <Component id="bAtras" min="-2" pref="117" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                      <Component id="bAceptar" min="-2" pref="98" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="1">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="l4" alignment="0" min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="l1" alignment="0" min="-2" pref="121" max="-2" attributes="1"/>
+                      </Group>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="t4" min="-2" pref="106" max="-2" attributes="1"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="1" groupAlignment="1" attributes="0">
+                              <Component id="t1" alignment="0" pref="110" max="32767" attributes="1"/>
+                              <Component id="t2" alignment="0" min="-2" pref="106" max="-2" attributes="1"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="l6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="l3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="l5" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="t5" pref="204" max="32767" attributes="1"/>
+                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="t6" alignment="1" max="32767" attributes="1"/>
+                              <Component id="t3" alignment="1" pref="192" max="32767" attributes="1"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="l2" min="-2" max="-2" attributes="1"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="1"/>
+                          <Group type="102" alignment="0" attributes="1">
+                              <Component id="lfuncion" min="-2" pref="84" max="-2" attributes="1"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="tFuncion" min="-2" pref="309" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="bGraficar" min="-2" pref="101" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jLabel2" min="-2" pref="91" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="tFuncion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lfuncion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bGraficar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="l4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="l5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="l1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="l6" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="l2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="l3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bAtras" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="M&#xe9;todos"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="rbBusquedas" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbReglaFalsa" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbBiseccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="rbNewton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="rbPuntoFijo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="rbRaicesMultiples" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="rbSecante" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="rbBusquedas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbPuntoFijo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbRaicesMultiples" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="rbNewton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbBiseccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="rbReglaFalsa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbSecante" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JRadioButton" name="rbPuntoFijo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="rgUnaVariable"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Punto Fijo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbPuntoFijoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbReglaFalsa">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="rgUnaVariable"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Regla Falsa"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbReglaFalsaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbBiseccion">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="rgUnaVariable"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Bisecci&#xf3;n"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbBiseccionActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbBusquedas">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="rgUnaVariable"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Busqueda Incremental"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbBusquedasActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbNewton">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="rgUnaVariable"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Metodo Newton"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbNewtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbSecante">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="rgUnaVariable"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Secante"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbSecanteActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbRaicesMultiples">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="rgUnaVariable"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Raices multiples"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbRaicesMultiplesActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="M&#xe9;todos Ecuaciones Una Variable"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lfuncion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Funci&#xf3;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tFuncion">
+    </Component>
+    <Component class="javax.swing.JLabel" name="l1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Valor Inicial"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="t1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="l2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="t2">
+    </Component>
+    <Component class="javax.swing.JLabel" name="l3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Iteraciones"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="t3">
+    </Component>
+    <Component class="javax.swing.JButton" name="bAceptar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Aceptar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAceptarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bAtras">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Atras"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAtrasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="l4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="g(x)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="t4">
+    </Component>
+    <Component class="javax.swing.JLabel" name="l5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="f&apos;&apos;(x)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="t5">
+    </Component>
+    <Component class="javax.swing.JLabel" name="l6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limite Superior"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="t6">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Interfaz/sinergia88x99.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bGraficar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Graficar"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
