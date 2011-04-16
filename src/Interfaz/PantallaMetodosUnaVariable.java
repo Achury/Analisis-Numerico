@@ -5,7 +5,10 @@ import Funciones.*;
 
 
 
+
 public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
+
+    boolean error = false;
 
     public String getFuncion(){
 
@@ -13,11 +16,15 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
         return  funcion;
 
     }
-    public double getValorInicial(){
-        double x = Double.valueOf(t1.getText());
-        return x;
+    public double getValor1(){
+        double valor1 = Double.valueOf(t1.getText());
+        return valor1;
      }
     public double getIncremento(){
+        double inc = Double.valueOf(t2.getText());
+        return inc;
+     }
+    public double getTolerancia(){
         double inc = Double.valueOf(t2.getText());
         return inc;
      }
@@ -25,6 +32,12 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
         int iter = Integer.parseInt(t3.getText());
         return iter;
      }
+
+    public double getValor2(){
+
+        double valor2 = Double.valueOf(t6.getText());
+        return valor2;
+    }
     public  PantallaMetodosUnaVariable() {
         initComponents();
         tFuncion.setVisible(false);
@@ -54,6 +67,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     private void initComponents() {
 
         rgUnaVariable = new javax.swing.ButtonGroup();
+        bgError = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         rbPuntoFijo = new javax.swing.JRadioButton();
         rbReglaFalsa = new javax.swing.JRadioButton();
@@ -81,6 +95,9 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
         t6 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         bGraficar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        rbRelativo = new javax.swing.JRadioButton();
+        rbAbsoluto = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
@@ -150,7 +167,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rbBusquedas)
                     .addComponent(rbReglaFalsa)
@@ -162,8 +179,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                         .addComponent(rbPuntoFijo)
                         .addGap(59, 59, 59)
                         .addComponent(rbRaicesMultiples))
-                    .addComponent(rbSecante))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(rbSecante)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,7 +197,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbReglaFalsa)
                     .addComponent(rbSecante))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24));
@@ -219,6 +235,33 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
         bGraficar.setText("Graficar");
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Error"));
+
+        bgError.add(rbRelativo);
+        rbRelativo.setText("Relativo");
+
+        bgError.add(rbAbsoluto);
+        rbAbsoluto.setText("Absoluto");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbRelativo)
+                    .addComponent(rbAbsoluto))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(rbRelativo)
+                .addGap(37, 37, 37)
+                .addComponent(rbAbsoluto)
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
+
         jMenu1.setText("Ayuda");
         jMenuBar1.add(jMenu1);
 
@@ -247,13 +290,13 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(l4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(t4, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(t1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                                .addComponent(t1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                                 .addComponent(t2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -266,7 +309,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                                 .addComponent(l5)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(t5, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                            .addComponent(t5, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(t6, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(t3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))))
@@ -275,15 +318,18 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                         .addComponent(l2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lfuncion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                                 .addComponent(tFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)))
+                                .addComponent(bGraficar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -293,7 +339,9 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -317,7 +365,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                     .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(l3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bAceptar)
                     .addComponent(bAtras))
@@ -329,6 +377,13 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
     private void rbRaicesMultiplesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbRaicesMultiplesActionPerformed
 
+
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
         tFuncion.setVisible(true);
         t1.setVisible(true);
         t3.setVisible(true);
@@ -350,6 +405,13 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     }//GEN-LAST:event_rbRaicesMultiplesActionPerformed
 
     private void rbBusquedasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBusquedasActionPerformed
+
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
         tFuncion.setVisible(true);
         t1.setVisible(true);
         t3.setVisible(true);
@@ -371,6 +433,13 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     }//GEN-LAST:event_rbBusquedasActionPerformed
 
     private void rbBiseccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBiseccionActionPerformed
+
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
         tFuncion.setVisible(true);
         t1.setVisible(true);
         t3.setVisible(true);
@@ -392,6 +461,12 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     }//GEN-LAST:event_rbBiseccionActionPerformed
 
     private void rbReglaFalsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbReglaFalsaActionPerformed
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
         tFuncion.setVisible(true);
         t1.setVisible(true);
         t3.setVisible(true);
@@ -421,6 +496,12 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     }//GEN-LAST:event_bAtrasActionPerformed
 
     private void rbPuntoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPuntoFijoActionPerformed
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
         tFuncion.setVisible(true);
         t1.setVisible(true);
         t3.setVisible(true);
@@ -442,6 +523,12 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     }//GEN-LAST:event_rbPuntoFijoActionPerformed
 
     private void rbNewtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNewtonActionPerformed
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
         tFuncion.setVisible(true);
         t1.setVisible(true);
         t3.setVisible(true);
@@ -462,6 +549,12 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     }//GEN-LAST:event_rbNewtonActionPerformed
 
     private void rbSecanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSecanteActionPerformed
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
         tFuncion.setVisible(true);
         t1.setVisible(true);
         t3.setVisible(true);
@@ -485,16 +578,37 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
 
         try{
+        if (rbBusquedas.isSelected()){
+       
 
             String fun = getFuncion();
-            double xant = getValorInicial();
+            double xant = getValor1();
             double inc = getIncremento();
             int iter = getIteraciones();
 
-            BusquedasIncrementales.busqueda(fun,xant,inc,iter);
+            MetodosUnaVariable.busquedasIncrementales(fun,xant,inc,iter);
 
 
-        }catch(Exception e){
+       
+      }
+      if (rbBiseccion.isSelected()){
+
+          if (rbRelativo.isSelected()){
+            error = true;
+          }else {error = false;}
+          
+          String fun = getFuncion();
+          double xi = getValor1();
+          double xs = getValor2();
+          int iter = getIteraciones();
+          double tol = getTolerancia();
+
+          
+          MetodosUnaVariable.Biseccion(fun, xi, xs, tol, iter,error);
+
+          
+      }
+         }catch(Exception e){
 
             System.out.println("guebon");
         }
@@ -513,10 +627,12 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     private javax.swing.JButton bAceptar;
     private javax.swing.JButton bAtras;
     private javax.swing.JButton bGraficar;
+    private javax.swing.ButtonGroup bgError;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel l1;
     private javax.swing.JLabel l2;
@@ -525,12 +641,14 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     private javax.swing.JLabel l5;
     private javax.swing.JLabel l6;
     private javax.swing.JLabel lfuncion;
+    private javax.swing.JRadioButton rbAbsoluto;
     private javax.swing.JRadioButton rbBiseccion;
     private javax.swing.JRadioButton rbBusquedas;
     private javax.swing.JRadioButton rbNewton;
     private javax.swing.JRadioButton rbPuntoFijo;
     private javax.swing.JRadioButton rbRaicesMultiples;
     private javax.swing.JRadioButton rbReglaFalsa;
+    private javax.swing.JRadioButton rbRelativo;
     private javax.swing.JRadioButton rbSecante;
     private javax.swing.ButtonGroup rgUnaVariable;
     private javax.swing.JTextField t1;
