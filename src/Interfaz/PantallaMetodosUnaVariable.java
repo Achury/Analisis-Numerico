@@ -2,6 +2,7 @@
 
 package Interfaz;
 import Funciones.*;
+import javax.swing.JOptionPane;
 
 
 
@@ -37,6 +38,19 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
         double valor2 = Double.valueOf(t6.getText());
         return valor2;
+    }
+
+    public String getFuncion2(){
+
+        String fun2 = t4.getText();
+        return fun2;
+    }
+
+    public String getFuncion3(){
+
+        String sderivada = t5.getText();
+        return sderivada;
+
     }
     public  PantallaMetodosUnaVariable() {
         initComponents();
@@ -560,13 +574,13 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
         t3.setVisible(true);
         t2.setVisible(true);
         t6.setVisible(true);
-        t4.setVisible(true);
+        t4.setVisible(false);
         t5.setVisible(false);
         lfuncion.setVisible(true);
         l1.setVisible(true);
         l2.setVisible(true);
         l3.setVisible(true);
-        l4.setVisible(true);
+        l4.setVisible(false);
         l5.setVisible(false);
         l6.setVisible(true);
         l2.setText("Tolerancia");
@@ -579,23 +593,15 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
         try{
         if (rbBusquedas.isSelected()){
-       
-
+      
             String fun = getFuncion();
             double xant = getValor1();
             double inc = getIncremento();
             int iter = getIteraciones();
 
             MetodosUnaVariable.busquedasIncrementales(fun,xant,inc,iter);
-
-
-       
       }
       if (rbBiseccion.isSelected()){
-
-          if (rbRelativo.isSelected()){
-            error = true;
-          }else {error = false;}
           
           String fun = getFuncion();
           double xi = getValor1();
@@ -603,14 +609,114 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
           int iter = getIteraciones();
           double tol = getTolerancia();
 
-          
+           if (rbRelativo.isSelected()){
+            error = true;
+          }else {error = false;}
+
+          if (!rbAbsoluto.isSelected() && !rbRelativo.isSelected()){
+                JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
+            }else{
           MetodosUnaVariable.Biseccion(fun, xi, xs, tol, iter,error);
-
-          
+            }
       }
-         }catch(Exception e){
+        if (rbReglaFalsa.isSelected()){
 
-            System.out.println("guebon");
+            String fun = getFuncion();
+            double xi = getValor1();
+            double xs = getValor2();
+            int iter = getIteraciones();
+            double tol = getTolerancia();
+
+            if (rbRelativo.isSelected()){
+            error = true;
+          }else {error = false;}
+            
+            if (!rbAbsoluto.isSelected() && !rbRelativo.isSelected()){
+                JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
+            }else{
+            MetodosUnaVariable.reglaFalsa(fun,xi, xs, tol,iter, error);
+            }
+        }
+
+        if (rbPuntoFijo.isSelected()){
+
+            String fun = getFuncion();
+            String fun2 = getFuncion2();
+            double xa = getValor1();
+            int iter = getIteraciones();
+            double tol = getTolerancia();
+            
+             if (rbRelativo.isSelected()){
+                error = true;
+            }else {error = false;}
+
+            if (!rbAbsoluto.isSelected() && !rbRelativo.isSelected()){
+                JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
+            }else{
+            MetodosUnaVariable.puntoFijo(fun, fun2, xa, tol, iter, error);
+            }
+        }
+
+        if (rbNewton.isSelected()){
+
+            String fun = getFuncion();
+            String derivada = getFuncion2();
+            double x = getValor1();
+            int iter = getIteraciones();
+            double tol = getTolerancia();
+             if (rbRelativo.isSelected()){
+                error = true;
+            }else {error = false;}
+
+            if (!rbAbsoluto.isSelected() && !rbRelativo.isSelected()){
+                JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
+            }else{
+            MetodosUnaVariable.newton(fun, derivada, x, tol, iter, error);
+            }
+
+        }
+
+        if (rbSecante.isSelected()){
+
+            String fun = getFuncion();
+            double x0 = getValor1();
+            double x1 = getValor2();
+            int iter = getIteraciones();
+            double tol = getTolerancia();
+
+            if (rbRelativo.isSelected()){
+                error = true;
+            }else {error = false;}
+
+            if (!rbAbsoluto.isSelected() && !rbRelativo.isSelected()){
+                JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
+            }else{
+            MetodosUnaVariable.secante(fun, x0, x1, tol, iter, error);
+            }
+        }
+
+        if (rbRaicesMultiples.isSelected()){
+
+            String fun = getFuncion();
+            String derivada = getFuncion2();
+            String sderivada = getFuncion3();
+            double x0 = getValor1();
+            double tol = getTolerancia();
+            int iter = getIteraciones();
+
+            if (rbRelativo.isSelected()){
+                error = true;
+            }else {error = false;}
+
+            if (!rbAbsoluto.isSelected() && !rbRelativo.isSelected()){
+                JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
+            }else{
+            MetodosUnaVariable.raicesMultiples(fun, derivada, sderivada, x0, tol, iter, error);
+            }
+
+        }
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Por favor ingrese correctamente los valores requeridos");
         }
     }//GEN-LAST:event_bAceptarActionPerformed
 
