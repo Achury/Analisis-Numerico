@@ -2,6 +2,9 @@
 
 package Interfaz;
 import Funciones.*;
+import com.singularsys.jep.JepException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -10,10 +13,20 @@ import javax.swing.JOptionPane;
 public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
     boolean error = false;
+    public static int metodo = 0;
+    String funcion;
+    String str;
+    public static String fun;
+    public static double xant;
+    public static double xact;
+    public static double inc;
+    public static int iter;
+    public static int cont = 0;
 
-    public String getFuncion(){
 
-        String funcion = tFuncion.getText();
+    public  String getFuncion(){
+
+        funcion = tFuncion.getText();
         return  funcion;
 
     }
@@ -51,6 +64,9 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
         String sderivada = t5.getText();
         return sderivada;
 
+    }
+    public String getStr(String str){
+        return str;
     }
     public  PantallaMetodosUnaVariable() {
         initComponents();
@@ -248,6 +264,11 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/sinergia88x99.png"))); // NOI18N
 
         bGraficar.setText("Graficar");
+        bGraficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bGraficarActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Error"));
 
@@ -590,24 +611,31 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
     }//GEN-LAST:event_rbSecanteActionPerformed
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
-
+       
         try{
+
         if (rbBusquedas.isSelected()){
       
-            String fun = getFuncion();
-            double xant = getValor1();
-            double inc = getIncremento();
-            int iter = getIteraciones();
+            fun = getFuncion();
+            xant = getValor1();
+            inc = getIncremento();
+            iter = getIteraciones();
+            metodo = 1;
+            MetodosUnaVariable.busquedasIncrementales(fun, xant, inc, iter);
+            cont = Funciones.MetodosUnaVariable.cont;
+            ResultadosUnaVariable ruv = new ResultadosUnaVariable();
+            ruv.setVisible(true);
+            }
 
-            MetodosUnaVariable.busquedasIncrementales(fun,xant,inc,iter);
-      }
+      
       if (rbBiseccion.isSelected()){
           
-          String fun = getFuncion();
+          fun = getFuncion();
           double xi = getValor1();
           double xs = getValor2();
           int iter = getIteraciones();
           double tol = getTolerancia();
+          
 
            if (rbRelativo.isSelected()){
             error = true;
@@ -616,12 +644,15 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
           if (!rbAbsoluto.isSelected() && !rbRelativo.isSelected()){
                 JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
             }else{
-          MetodosUnaVariable.Biseccion(fun, xi, xs, tol, iter,error);
+              MetodosUnaVariable.Biseccion(fun, xi, xs, tol, iter,error);
+              metodo = 2;
+              ResultadosUnaVariable ruv = new ResultadosUnaVariable();
+              ruv.setVisible(true);
             }
       }
         if (rbReglaFalsa.isSelected()){
 
-            String fun = getFuncion();
+            fun = getFuncion();
             double xi = getValor1();
             double xs = getValor2();
             int iter = getIteraciones();
@@ -635,12 +666,15 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
             }else{
             MetodosUnaVariable.reglaFalsa(fun,xi, xs, tol,iter, error);
+            metodo  = 3;
+            ResultadosUnaVariable ruv = new ResultadosUnaVariable();
+            ruv.setVisible(true);
             }
         }
 
         if (rbPuntoFijo.isSelected()){
 
-            String fun = getFuncion();
+            fun = getFuncion();
             String fun2 = getFuncion2();
             double xa = getValor1();
             int iter = getIteraciones();
@@ -654,12 +688,15 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
             }else{
             MetodosUnaVariable.puntoFijo(fun, fun2, xa, tol, iter, error);
+            metodo = 4;
+            ResultadosUnaVariable ruv = new ResultadosUnaVariable();
+            ruv.setVisible(true);
             }
         }
 
         if (rbNewton.isSelected()){
 
-            String fun = getFuncion();
+            fun = getFuncion();
             String derivada = getFuncion2();
             double x = getValor1();
             int iter = getIteraciones();
@@ -672,13 +709,16 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
             }else{
             MetodosUnaVariable.newton(fun, derivada, x, tol, iter, error);
+            metodo = 5;
+            ResultadosUnaVariable ruv = new ResultadosUnaVariable();
+            ruv.setVisible(true);
             }
 
         }
 
         if (rbSecante.isSelected()){
 
-            String fun = getFuncion();
+            fun = getFuncion();
             double x0 = getValor1();
             double x1 = getValor2();
             int iter = getIteraciones();
@@ -692,12 +732,15 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
             }else{
             MetodosUnaVariable.secante(fun, x0, x1, tol, iter, error);
+            metodo = 6;
+            ResultadosUnaVariable ruv = new ResultadosUnaVariable();
+            ruv.setVisible(true);
             }
         }
 
         if (rbRaicesMultiples.isSelected()){
 
-            String fun = getFuncion();
+            fun = getFuncion();
             String derivada = getFuncion2();
             String sderivada = getFuncion3();
             double x0 = getValor1();
@@ -712,6 +755,9 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Por favor elija un tipo de error");
             }else{
             MetodosUnaVariable.raicesMultiples(fun, derivada, sderivada, x0, tol, iter, error);
+            metodo = 7;
+            ResultadosUnaVariable ruv = new ResultadosUnaVariable();
+            ruv.setVisible(true);
             }
 
         }
@@ -719,6 +765,16 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Por favor ingrese correctamente los valores requeridos");
         }
     }//GEN-LAST:event_bAceptarActionPerformed
+
+    private void bGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGraficarActionPerformed
+        try {
+            
+            Graficador g = new Graficador(getFuncion());
+            g.setVisible(true);
+        } catch (JepException ex) {
+            Logger.getLogger(PantallaMetodosUnaVariable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_bGraficarActionPerformed
 
     
     public static void main(String args[]) {
