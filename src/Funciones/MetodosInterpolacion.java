@@ -161,10 +161,10 @@ public class MetodosInterpolacion {
             matriz [i + 1] [cont * 3 + 3] = 1;
             matriz [i] [3 * n + 1] = Y[cont];
             matriz [i + 1] [3 * n + 1] = Y[cont + 1];
-            cont = cont + 1;   
+            cont = cont + 1;
         }
         cont = 0;
-        
+
 	//Se llenan los valor de f'
         for (int i = 2 * n + 1; i <= (3 * n - 1); i++){
             matriz [i] [cont * 3 + 1] = 2 * X[cont + 1];
@@ -179,18 +179,22 @@ public class MetodosInterpolacion {
 
         //Imprime la matriz
         double [][] matrizAb = new double [3*n][3*n+1];
-        matrizres = new double [3*n+1][3*n+2];
+        matrizres = new double [3*n][3*n+1];
+        System.out.println(matrizres.length);
+        System.out.println(matrizres[0].length);
         for (int i = 1; i <= 3*n; i++){
             for (int j = 1; j <= 3*n + 1; j++){
-                matrizres[i][j] = matriz[i][j];
-                System.out.print("  ");
+                //System.out.print(matriz[i][j]);
+                //System.out.print("  ");
                 matrizAb[i-1][j-1] = matriz[i][j];
+                matrizres[i - 1][j -1] = matriz[i][j];
+                //System.out.print(matrizres[i - 1][j - 1] + " ");
             }
-            System.out.println();
+            //System.out.println();
         }
 
         double []R = elimGaussTotal(matrizAb, 3*n);
-		
+
         cont = 0;
 
         for (int i = 0; i < n; i++){
@@ -198,12 +202,9 @@ public class MetodosInterpolacion {
             b[i] = R[3 * cont + 1];
             c[i] = R[3 * cont + 2];
             cont = cont + 1;
-            
-        }
-        for(int j = 0; j < 3*n; j++){
-                res = R[j] + "\n";
-            }
 
+        }
+        res = "";
         for (int i = 0; i < n ; i++){
             res += "Para el intervalo " + X[i] + ", " + X[i+1] + " la función es: y = " + a[i] + " * x^2 " ;
             if(b[i] >= 0){
@@ -211,9 +212,9 @@ public class MetodosInterpolacion {
             }else
                 res += "- " + -b[i] + " * x ";
             if(c[i] >= 0){
-               res += "+ " + c[i];
+                res += "+ " + c[i] + "\n";
             }else
-                res += "- " + -c[i];
+                res += "- " + -c[i] + "\n";
             }
         }
     
@@ -278,11 +279,13 @@ public class MetodosInterpolacion {
 
         //Imprime la matriz
         double [][] matrizAb = new double [4*n][4*n+1];
+        matrizres = new double [4*n][4*n+1];
         for (int i = 1; i <= 4*n; i++){
             for (int j = 1; j <= 4*n + 1; j++){
-                System.out.print(matriz[i][j]);
-                System.out.print("  ");
+                //System.out.print(matriz[i][j]);
+                //System.out.print("  ");
                 matrizAb[i-1][j-1] = matriz[i][j];
+                matrizres[i - 1][j - 1] = matriz[i][j];
             }
             System.out.println();
         }
@@ -299,21 +302,21 @@ public class MetodosInterpolacion {
             cont = cont + 1;
         }
 
-
+        res = "";
         for (int i = 0; i < n ; i++){
-            System.out.print("Para el intervalo " + X[i] + ", " + X[i+1] + " la función es: y = " + a[i] + " * x^3 " );
+            res += "Para el intervalo " + X[i] + ", " + X[i+1] + " la función es: y = " + a[i] + " * x^3 " ;
             if(b[i] >= 0){
-                System.out.print("+ " + b[i] + " * x^2 ");
+                res += "+ " + b[i] + " * x^2 ";
             }else
-                System.out.print("- " + -b[i] + " * x^2 ");
+                res += "- " + -b[i] + " * x^2 ";
             if(c[i] >= 0){
-                System.out.print("+ " + c[i] + " * x ");
+                res += "+ " + c[i] + " * x ";
             }else
-                System.out.print("- " + -c[i] + " * x ");
+                res += "- " + -c[i] + " * x ";
             if(d[i] >= 0){
-                System.out.println("+ " + d[i]);
+                res += "+ " + d[i] + "\n";
             }else
-                System.out.println("- " + -d[i]);
+                res += "- " + -d[i] + "\n";
             }
         
     }

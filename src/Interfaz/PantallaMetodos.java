@@ -56,7 +56,12 @@ public class PantallaMetodos extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
+        jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Índice de Temas"));
 
@@ -198,6 +203,12 @@ public class PantallaMetodos extends javax.swing.JFrame {
           this.setVisible(false);
         }*/
     }//GEN-LAST:event_bAceptarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        PantallaFinal pf = new PantallaFinal();
+        pf.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
     * @param args the command line arguments

@@ -12,6 +12,7 @@
 package Interfaz;
 
 import Funciones.MetodosInterpolacion;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,6 +25,7 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
     public PantallaInterpolacion() {
         initComponents();
         bAceptar.setEnabled(false);
+        bInterpolar.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
@@ -51,7 +53,7 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
         bEjecutar = new javax.swing.JButton();
         bAtras = new javax.swing.JButton();
         bAceptar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        bInterpolar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -96,7 +98,7 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(rSpline);
-        rSpline.setText("Spline lineal");
+        rSpline.setText("Splines lineal");
         rSpline.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSplineActionPerformed(evt);
@@ -119,7 +121,7 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
                         .addGap(59, 59, 59))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(rSpline)
-                        .addContainerGap(558, Short.MAX_VALUE))))
+                        .addContainerGap(551, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,6 +144,11 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
         });
 
         bAtras.setText("Atras");
+        bAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAtrasActionPerformed(evt);
+            }
+        });
 
         bAceptar.setText("Aceptar");
         bAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -150,10 +157,10 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Interpolar con esta funcion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bInterpolar.setText("Interpolar con esta funcion");
+        bInterpolar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bInterpolarActionPerformed(evt);
             }
         });
 
@@ -187,7 +194,7 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(173, 173, 173)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bInterpolar, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(179, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(100, 100, 100)
@@ -213,7 +220,7 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(bInterpolar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bAtras)
@@ -239,12 +246,12 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
         tblTable.setModel(modeloMatriz);
         tblTable.setValueAt("X", 0, 0);
         tblTable.setValueAt("y", 1, 0);
-
     }//GEN-LAST:event_bAceptarActionPerformed
 
     private void bEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEjecutarActionPerformed
         tpResultados.setText("");
-
+        bInterpolar.setEnabled(true);
+        try{
         if(rNewton.isSelected()){
             MetodosInterpolacion.newton(readx(Integer.parseInt(tNum.getText())), ready(Integer.parseInt(tNum.getText())), Integer.parseInt(tNum.getText()));
             tpResultados.setText("Polinomio : " + MetodosInterpolacion.res);
@@ -254,33 +261,46 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
             tpResultados.setText("Polinomio : " + MetodosInterpolacion.res);
         }
         if(rSpline.isSelected()){
+            bInterpolar.setEnabled(false);
             MetodosInterpolacion.splinesLineal(readx(Integer.parseInt(tNum.getText())), ready(Integer.parseInt(tNum.getText())), Integer.parseInt(tNum.getText()));
             tpResultados.setText(MetodosInterpolacion.res);
+        }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Por favor ingrese correctamente los valores requeridos");
         }
     }//GEN-LAST:event_bEjecutarActionPerformed
 
     private void rNewtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rNewtonActionPerformed
         bAceptar.setEnabled(true);
+        bInterpolar.setEnabled(false);
     }//GEN-LAST:event_rNewtonActionPerformed
 
     private void rLagrageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rLagrageActionPerformed
         bAceptar.setEnabled(true);
+        bInterpolar.setEnabled(false);
     }//GEN-LAST:event_rLagrageActionPerformed
 
     private void rSplineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSplineActionPerformed
         bAceptar.setEnabled(true);
+        bInterpolar.setEnabled(false);
     }//GEN-LAST:event_rSplineActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bInterpolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInterpolarActionPerformed
         PantallaInterpolante pint = new PantallaInterpolante();
         pint.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bInterpolarActionPerformed
 
     private void bMetodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMetodosActionPerformed
 
         PantallaOtrosMetodosInterpolacion pomi = new PantallaOtrosMetodosInterpolacion();
         pomi.setVisible(true);
     }//GEN-LAST:event_bMetodosActionPerformed
+
+    private void bAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtrasActionPerformed
+        this.dispose();
+        PantallaMetodos pm = new PantallaMetodos();
+        pm.setVisible(true);
+    }//GEN-LAST:event_bAtrasActionPerformed
     public double[] readx(int a){
         double[] x = new double[a];
         for(int i = 1; i < a; i++){
@@ -313,9 +333,9 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
     private javax.swing.JButton bAceptar;
     private javax.swing.JButton bAtras;
     private javax.swing.JButton bEjecutar;
+    private javax.swing.JButton bInterpolar;
     private javax.swing.JButton bMetodos;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

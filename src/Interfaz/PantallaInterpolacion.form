@@ -58,7 +58,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="380" max="-2" attributes="0"/>
+              <Component id="bInterpolar" min="-2" pref="380" max="-2" attributes="0"/>
               <EmptySpace pref="179" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -88,7 +88,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="81" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="bInterpolar" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="95" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bAtras" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -159,7 +159,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="rSpline" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="558" max="32767" attributes="0"/>
+                          <EmptySpace pref="551" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -217,7 +217,7 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="buttonGroup1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Spline lineal"/>
+            <Property name="text" type="java.lang.String" value="Splines lineal"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSplineActionPerformed"/>
@@ -237,6 +237,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Atras"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAtrasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bAceptar">
       <Properties>
@@ -246,12 +249,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAceptarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="bInterpolar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Interpolar con esta funcion"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bInterpolarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
