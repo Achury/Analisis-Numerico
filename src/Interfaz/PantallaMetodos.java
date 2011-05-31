@@ -38,13 +38,9 @@ public class PantallaMetodos extends javax.swing.JFrame {
         rbUnaVariable = new javax.swing.JRadioButton();
         rbSistemaEcuaciones = new javax.swing.JRadioButton();
         rbInterpolacion = new javax.swing.JRadioButton();
-        rbEcuacionesDiferenciables = new javax.swing.JRadioButton();
-        rbIntegracion = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -76,23 +72,11 @@ public class PantallaMetodos extends javax.swing.JFrame {
         rbInterpolacion.setFont(new java.awt.Font("Tahoma", 1, 11));
         rbInterpolacion.setText("Interpolación");
 
-        bgMetodos.add(rbEcuacionesDiferenciables);
-        rbEcuacionesDiferenciables.setFont(new java.awt.Font("Tahoma", 1, 11));
-        rbEcuacionesDiferenciables.setText("Ecuaciones diferenciales");
-
-        bgMetodos.add(rbIntegracion);
-        rbIntegracion.setFont(new java.awt.Font("Tahoma", 1, 11));
-        rbIntegracion.setText("Integración");
-
         jLabel2.setText("Métodos para hallar raices de funciones continuas de una variable");
 
         jLabel3.setText("Métodos para solucionar sistemas de ecuaciones");
 
-        jLabel4.setText("<Descripción>");
-
         jLabel5.setText("<Descripción>");
-
-        jLabel6.setText("<Descripción>");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -115,23 +99,10 @@ public class PantallaMetodos extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 447, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel4))
-                            .addComponent(rbEcuacionesDiferenciables)))
+                        .addComponent(rbInterpolacion))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbInterpolacion)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5)))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(rbIntegracion)))
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel5)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -144,19 +115,11 @@ public class PantallaMetodos extends javax.swing.JFrame {
                 .addComponent(rbSistemaEcuaciones)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(rbEcuacionesDiferenciables)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addGap(13, 13, 13)
-                .addComponent(rbInterpolacion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addGap(24, 24, 24)
-                .addComponent(rbIntegracion)
+                .addComponent(rbInterpolacion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(jLabel5)
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24));
@@ -178,10 +141,10 @@ public class PantallaMetodos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(245, 245, 245)
                         .addComponent(jLabel1))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 590, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 590, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -191,9 +154,9 @@ public class PantallaMetodos extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 81, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bAceptar)
                     .addComponent(jButton2))
@@ -213,6 +176,11 @@ public class PantallaMetodos extends javax.swing.JFrame {
           PantallaSistemasDeEcuaciones sistemas = new PantallaSistemasDeEcuaciones();
           sistemas.setVisible(true);
           this.setVisible(false);
+        }
+        if(rbInterpolacion.isSelected()){
+            PantallaInterpolacion pi = new PantallaInterpolacion();
+            pi.setVisible(true);
+            this.setVisible(false);
         }
        /* if(rbInterpolacion.isSelected()){
           PantallaMetodosUnaVariable var = new PantallaMetodosUnaVariable();
@@ -249,13 +217,9 @@ public class PantallaMetodos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton rbEcuacionesDiferenciables;
-    private javax.swing.JRadioButton rbIntegracion;
     private javax.swing.JRadioButton rbInterpolacion;
     private javax.swing.JRadioButton rbSistemaEcuaciones;
     private javax.swing.JRadioButton rbUnaVariable;
