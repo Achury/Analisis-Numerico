@@ -38,20 +38,6 @@ public class MetodosInterpolacion {
             fun = fun + " / " + den;
         }
         res = fun;
-
-
-                    
-            
-
-        /*
-        //Imprime Li
-        for(int i = 0; i < n; i++){
-            valor += L[i] * fx[i];
-            System.out.println("L" + i + " = " + L[i]);
-        }
-        System.out.println("El valor interpolado es: " +  valor);
-         *
-         */
     
     }
 
@@ -68,18 +54,14 @@ public class MetodosInterpolacion {
             }
         }
         
-        //System.out.println("Tabla:");
-        matrizres = new double[n][n];
+        //matrizres = new double[n][n];
         for (int i = 0; i < n; i++){
             for (int j = 0; j <= n; j++){
-                matrizres[i][j] = P[i][j];
-                //System.out.print("  ");
+                 //matrizres[i][j] = P[i][j];
             }
-            //System.out.println();
         }
         
         double Val = P[n-1][n];
-        System.out.println("   ");
         res = "Valor Interpolado: " + Val;
         
 
@@ -105,17 +87,15 @@ public class MetodosInterpolacion {
             
         }
 
-        System.out.println("Tabla:");
         for (int i = 0; i < n; i++){
             for (int j = 0; j <= n; j++){
-                System.out.print(B[i][j]);
-                System.out.print("  ");
+                res += B[i][j] + "  ";
             }
-            System.out.println();
+            res += "\n";
         }
 
         String polinomio = imprimirPolinomioNewton(b, X, n);
-        res = polinomio;
+        res += polinomio;
 
         
 
@@ -134,12 +114,13 @@ public class MetodosInterpolacion {
     }
 
     private static void imprimirRectas (double [] m, double [] b, double X[], int n){
+        res = "";
         for (int i = 0; i < n - 1; i++){
-            res = "Para el intervalo " + X[i] + ", " + X[i+1] + " la función es: y = " + m[i] + " * x ";
+            res += "Para el intervalo " + X[i] + ", " + X[i+1] + " la función es: y = " + m[i] + " * x ";
             if(b[i] >= 0){
-                res += "+ " + b[i] + "\n";
+                res += "+ " + b[i] + "\n\n";
             }else
-                res += "- " + -b[i] + "\n";
+                res += "- " + -b[i] + "\n\n";
         }
     }
 
@@ -184,13 +165,9 @@ public class MetodosInterpolacion {
         System.out.println(matrizres[0].length);
         for (int i = 1; i <= 3*n; i++){
             for (int j = 1; j <= 3*n + 1; j++){
-                //System.out.print(matriz[i][j]);
-                //System.out.print("  ");
                 matrizAb[i-1][j-1] = matriz[i][j];
                 matrizres[i - 1][j -1] = matriz[i][j];
-                //System.out.print(matrizres[i - 1][j - 1] + " ");
             }
-            //System.out.println();
         }
 
         double []R = elimGaussTotal(matrizAb, 3*n);
@@ -212,9 +189,9 @@ public class MetodosInterpolacion {
             }else
                 res += "- " + -b[i] + " * x ";
             if(c[i] >= 0){
-                res += "+ " + c[i] + "\n";
+                res += "+ " + c[i] + "\n\n";
             }else
-                res += "- " + -c[i] + "\n";
+                res += "- " + -c[i] + "\n\n";
             }
         }
     
@@ -282,12 +259,9 @@ public class MetodosInterpolacion {
         matrizres = new double [4*n][4*n+1];
         for (int i = 1; i <= 4*n; i++){
             for (int j = 1; j <= 4*n + 1; j++){
-                //System.out.print(matriz[i][j]);
-                //System.out.print("  ");
                 matrizAb[i-1][j-1] = matriz[i][j];
                 matrizres[i - 1][j - 1] = matriz[i][j];
             }
-            System.out.println();
         }
 
         double []R = elimGaussTotal(matrizAb, 4*n);
@@ -314,9 +288,9 @@ public class MetodosInterpolacion {
             }else
                 res += "- " + -c[i] + " * x ";
             if(d[i] >= 0){
-                res += "+ " + d[i] + "\n";
+                res += "+ " + d[i] + "\n\n";
             }else
-                res += "- " + -d[i] + "\n";
+                res += "- " + -d[i] + "\n\n";
             }
         
     }
@@ -381,7 +355,7 @@ public class MetodosInterpolacion {
             }
         }
         if (mayor == 0){
-            System.out.println("El sistema no tiene solución única");
+            res += "El sistema no tiene solución única";
         }else if (filaMayor != k){
             Ab = intercambiarFilas(Ab, filaMayor, k);
         }
@@ -506,16 +480,6 @@ public class MetodosInterpolacion {
         double Y[] = {4,1,7,2};
         int n = 4;
         splinesCubico(X, Y, n);
-
-
           
     }
-    
-
-
-
-
-
-
-
 }

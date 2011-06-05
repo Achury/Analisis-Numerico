@@ -23,6 +23,8 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
         initComponents();
         bAceptar.setEnabled(false);
         bEjecutar.setEnabled(false);
+        lneville.setVisible(false);
+        tneville.setVisible(false);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -46,6 +48,8 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tpResultados = new javax.swing.JTextPane();
         jLabel3 = new javax.swing.JLabel();
+        lneville = new javax.swing.JLabel();
+        tneville = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -147,6 +151,8 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
 
         jLabel3.setText("Resultados");
 
+        lneville.setText("Valor a interpolar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -169,16 +175,20 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(lneville, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3)
+                                .addComponent(tneville, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(35, 35, 35))
             .addGroup(layout.createSequentialGroup()
-                .addGap(126, 126, 126)
+                .addGap(120, 120, 120)
                 .addComponent(bEjecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
                 .addComponent(bAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
+                .addGap(153, 153, 153))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,11 +204,15 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
                     .addComponent(bAceptar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lneville)
+                    .addComponent(tneville, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -295,7 +309,12 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
             tpResultados.setText(MetodosInterpolacion.res);
 
         }
+        if(rNeville.isSelected()){
+            MetodosInterpolacion.neville(readx(num), ready(num),Double.parseDouble(tneville.getText()),num);
+            tpResultados.setText(MetodosInterpolacion.res);
+        }
         }catch(Exception e){
+            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Por favor ingrese correctamente los valores requeridos");
         }
     }//GEN-LAST:event_bEjecutarActionPerformed
@@ -305,17 +324,24 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
     }//GEN-LAST:event_bAtrasActionPerformed
 
     private void rNevilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rNevilleActionPerformed
-        // TODO add your handling code here:
+        lneville.setVisible(true);
+        tneville.setVisible(true);
+        bAceptar.setEnabled(true);
+        bEjecutar.setEnabled(true);
     }//GEN-LAST:event_rNevilleActionPerformed
 
     private void rCuadraticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rCuadraticoActionPerformed
         bAceptar.setEnabled(true);
         bEjecutar.setEnabled(true);
+        lneville.setVisible(false);
+        tneville.setVisible(false);
     }//GEN-LAST:event_rCuadraticoActionPerformed
 
     private void rCubicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rCubicoActionPerformed
         bAceptar.setEnabled(true);
         bEjecutar.setEnabled(true);
+        lneville.setVisible(false);
+        tneville.setVisible(false);
     }//GEN-LAST:event_rCubicoActionPerformed
     public void print (double [][]a){
         int n = a.length;
@@ -363,12 +389,14 @@ public class PantallaOtrosMetodosInterpolacion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lneville;
     private javax.swing.JRadioButton rCuadratico;
     private javax.swing.JRadioButton rCubico;
     private javax.swing.JRadioButton rNeville;
     private javax.swing.JTextField tNum;
     private javax.swing.JTable tblResultado;
     private javax.swing.JTable tblTable;
+    private javax.swing.JTextField tneville;
     private javax.swing.JTextPane tpResultados;
     // End of variables declaration//GEN-END:variables
 

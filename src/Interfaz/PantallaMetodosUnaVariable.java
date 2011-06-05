@@ -31,15 +31,15 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
     }
     public double getValor1(){
-        double valor1 = Double.valueOf(t1.getText());
+        double valor1 = Double.parseDouble(t1.getText());
         return valor1;
      }
     public double getIncremento(){
-        double inc = Double.valueOf(t2.getText());
+        double inc = Double.parseDouble(t2.getText());
         return inc;
      }
     public double getTolerancia(){
-        double inc = Double.valueOf(t2.getText());
+        double inc = Double.parseDouble(t2.getText());
         return inc;
      }
     public int getIteraciones(){
@@ -49,7 +49,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
     public double getValor2(){
 
-        double valor2 = Double.valueOf(t6.getText());
+        double valor2 = Double.parseDouble(t6.getText());
         return valor2;
     }
 
@@ -762,6 +762,7 @@ public class PantallaMetodosUnaVariable extends javax.swing.JFrame {
 
         }
          }catch(Exception e){
+             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Por favor ingrese correctamente los valores requeridos");
         }
     }//GEN-LAST:event_bAceptarActionPerformed

@@ -14,6 +14,7 @@ package Interfaz;
 import Funciones.MetodosInterpolacion;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.util.Arrays;
 
 /**
  *
@@ -304,14 +305,14 @@ public class PantallaInterpolacion extends javax.swing.JFrame {
     public double[] readx(int a){
         double[] x = new double[a];
         for(int i = 1; i < a; i++){
-            x[i] = Double.valueOf(tblTable.getValueAt(0, i).toString());
+            x[i-1] = Double.valueOf(tblTable.getValueAt(0, i).toString());
         }
         return x;
     }
      public double[] ready(int a){
         double[] y = new double[a];
         for(int i = 1; i < a; i++){
-            y[i] = Double.valueOf(tblTable.getValueAt(1, i).toString());
+            y[i -1] = Double.valueOf(tblTable.getValueAt(1, i).toString());
         }
         return y;
     }

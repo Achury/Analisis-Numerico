@@ -33,8 +33,8 @@ public class  MetodosUnaVariable {
         yact = parser.FunctionEvaluator(fun, xact);
         cont = 1;
 
-        arr = new double[iter];
-        arry = new double[iter];
+        arr = new double[iter + 4];
+        arry = new double[iter+ 4];
         arr[0] = xant;
         arry[0] = yant;
         arr[1] = xact;
@@ -82,11 +82,11 @@ public class  MetodosUnaVariable {
         double ys;
         double xm;
         double ym;
-        arr = new double[iter];
-        arry = new double[iter];
-        arrxs = new double[iter];
-        arrxm = new double[iter];
-        arrerror = new double[iter];
+        arr = new double[iter +1 ];
+        arry = new double[iter + 1];
+        arrxs = new double[iter + 1];
+        arrxm = new double[iter + 1];
+        arrerror = new double[iter + 1];
         arr[0] = xi;
         arrxs[0] = xs;
         String ecuacion;
@@ -160,11 +160,11 @@ public class  MetodosUnaVariable {
 
         double yi = parser.FunctionEvaluator(fun, xi);
         double ys = parser.FunctionEvaluator(fun, xs);
-        arr = new double[iter];
-        arry = new double[iter];
-        arrxs = new double[iter];
-        arrxm = new double[iter];
-        arrerror = new double[iter];
+        arr = new double[iter + 2];
+        arry = new double[iter + 2];
+        arrxs = new double[iter + 2];
+        arrxm = new double[iter + 2];
+        arrerror = new double[iter + 2];
         arr[0] = xi;
         arrxs[0] = xs;
         cont = 1;
@@ -241,9 +241,9 @@ public class  MetodosUnaVariable {
 
 
     JavaParser parser = new JavaParser();
-    arr = new double[iter];
-    arry = new double[iter];
-    arrerror = new double[iter];
+    arr = new double[iter+ 3];
+    arry = new double[iter+3];
+    arrerror = new double[iter+3];
     double y = parser.FunctionEvaluator(fun, xa);
     double eabs = tol + 1;
     double xn = 0;
@@ -289,9 +289,9 @@ public class  MetodosUnaVariable {
         double yp = parser.FunctionEvaluator(derivada, x);
         double eabs = tol + 1;
         double x1 = 0;
-        arr = new double[iter];
-        arry = new double[iter];
-        arrerror = new double[iter];
+        arr = new double[iter + 2];
+        arry = new double[iter + 1];
+        arrerror = new double[iter + 1];
         arr[0] = x;
         arry[0] = y;
         arrerror[0] = 0;
@@ -343,9 +343,9 @@ public class  MetodosUnaVariable {
     double y0 = parser.FunctionEvaluator(fun, x0);
     double y1 = parser.FunctionEvaluator(fun,x1);
     double den = y1 - y0;
-    arr = new double[iter];
-    arry = new double[iter];
-    arrerror = new double[iter];
+    arr = new double[iter + 2];
+    arry = new double[iter + 2];
+    arrerror = new double[iter + 3];
     arr[0] = x0;
     arry[0] = y0;
     arrerror[0] = 0;
@@ -399,10 +399,10 @@ public class  MetodosUnaVariable {
     double y = parser.FunctionEvaluator(fun, x0);
     double yp = parser.FunctionEvaluator(derivada, x0);
     double ypp = parser.FunctionEvaluator(sderivada, x0);
-    arr = new double[iter];
-    arry = new double[iter];
-    arrerror = new double[iter];
-    arrden = new double[iter];
+    arr = new double[iter + 3];
+    arry = new double[iter +3];
+    arrerror = new double[iter+3];
+    arrden = new double[iter +3];
     arr[0] = x0;
     arry[0] = y;
     arr[0] = 0;
